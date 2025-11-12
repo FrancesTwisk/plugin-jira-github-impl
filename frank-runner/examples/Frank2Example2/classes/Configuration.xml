@@ -1,0 +1,8 @@
+<!DOCTYPE Configuration [
+	<!ENTITY Example2a SYSTEM "./ConfigurationExample2a.xml">
+	<!ENTITY Example2b SYSTEM "./ConfigurationExample2b.xml">
+]>
+<Configuration>
+	&Example2a;
+	&Example2b;
+</Configuration>

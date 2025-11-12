@@ -1,0 +1,7 @@
+/build
+/cacerts
+/download
+/wip
+build.properties
+/.idea/
+.vscode/

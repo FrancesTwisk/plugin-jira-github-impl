@@ -1,0 +1,27 @@
+<project default="restart-iaf-example" xmlns:if="ant:if" xmlns:unless="ant:unless">
+	<target name="restart-iaf-example">
+		<property file="../iaf-webapp/build.properties"/>
+		<property name="maven.skip.clean" value="${maven.skip.all}"/>
+		<property name="maven.verbose" value="false"/>
+
+		<condition property="start.exe" value="../../start.bat" else="/bin/bash"><os family="windows"/></condition>
+		<condition property="start.arg" value="../../start.sh" else=""><os family="unix"/></condition>
+
+		<condition property="ff.dir" value="iaf" else="frankframework"><available file="../../../iaf" type="dir"/></condition>
+
+		<ant dir="../iaf-webapp" antfile="build.xml" inheritAll="false">
+			<property name="skip.start" value="true"/>
+		</ant>
+
+		<echo message="iaf-example: Update iaf-example with artifacts from local repo and start Tomcat"/>
+		<exec executable="${start.exe}" vmlauncher="false" failonerror="true">
+			<arg value="${start.arg}"/>
+			<arg value="-Dproject.dir=${ff.dir}/example"/>
+			<arg value="-Dmaven=true"/>
+			<arg value="-Dmaven.skip.clean=${maven.skip.clean}"/>
+			<arg value="-Dmaven.verbose=${maven.verbose}"/>
+			<arg value="-Dproject.gitignore.skip=true"/><!-- Folder target already present in frankframework/.gitginore -->
+			<arg value="-Dtests.dir=src/test/resources/TestTool"/>
+		</exec>
+	</target>
+</project>

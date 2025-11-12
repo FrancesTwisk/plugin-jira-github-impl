@@ -1,0 +1,65 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.frankframework</groupId>
+	<artifactId>plugin-template</artifactId>
+
+	<name>test-plugin</name>
+	<description>FrankFramework! PluginJAR Template</description>
+
+	<organization>
+		<name>Frank!Framework</name>
+	</organization>
+
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<framework.version>9.4.0-20251030.042333</framework.version>
+		<ff.version>[9.4.0-20251030.042333]</ff.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.frankframework</groupId>
+			<artifactId>frankframework-webapp</artifactId>
+			<version>${ff.version}</version>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>org.frankframework</groupId>
+			<artifactId>frankframework-core</artifactId>
+			<version>${ff.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.10.3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20240303</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.32</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>frankframework</id>
+			<name>frankframework</name>
+			<url>https://nexus.frankframework.org/repository/public</url>
+		</repository>
+	</repositories>
+</project>

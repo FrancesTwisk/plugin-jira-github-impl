@@ -1,0 +1,37 @@
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.ibissource</groupId>
+	<artifactId>Frank2Example5</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+
+	<parent>
+		<groupId>org.ibissource</groupId>
+		<artifactId>Frank2Example5-parent</artifactId>
+		<version>1.0</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.ibissource</groupId>
+			<artifactId>ibis-adapterframework-webapp</artifactId>
+			<version>[7.7-20220125.112844,)</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<!-- Enable F!F SNAPSHOT versions -->
+		<repository>
+			<id>ibissource</id>
+			<name>Ibissource</name>
+			<url>https://nexus.frankframework.org/content/repositories/public</url>
+		</repository>
+	</repositories>
+
+</project>

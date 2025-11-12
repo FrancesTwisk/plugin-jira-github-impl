@@ -1,0 +1,24 @@
+<Configuration>
+	<Module>
+		<Adapter name="Github to Jira">
+			<Receiver name="GithubListener">
+				<Listener className="org.frankframework.plugin.GithubListener" githubUser="" githubToken="" githubRepo=""/>
+			</Receiver>
+			<Pipeline>
+				<SenderPipe name="JiraSender">
+					<Sender className="org.frankframework.plugin.JiraSender" jiraBaseUrl="" jiraUser="" jiraToken="" jiraProject="" jiraField=""/>
+				</SenderPipe>
+			</Pipeline>
+		</Adapter>
+		<Adapter name="Jira to Github">
+			<Receiver name="JiraListener">
+				<Listener className="org.frankframework.plugin.JiraListener" jiraBaseUrl="" jiraUser="" jiraToken="" jiraProject=""/>
+			</Receiver>
+			<Pipeline>
+				<SenderPipe name="GithubSender">
+					<Sender className="org.frankframework.plugin.GithubSender" githubUser="" githubToken="" githubRepo="" jiraUser="" jiraToken="" jiraField=""/>
+				</SenderPipe>
+			</Pipeline>
+		</Adapter>
+	</Module>
+</Configuration>
