@@ -59,7 +59,7 @@ public class JiraSender  implements ISender {
 			for (int i = 0; i < newIssues.length(); i++) {
 				JSONObject newIssue = newIssues.getJSONObject(i);
 				JSONObject jiraIssue = findIssueByGithubID(newIssue);
-				httpRequestCloseJiraIssue.setURI(URI.create("https://francestwisk.atlassian.net/rest/api/3/issue/" + jiraIssue.getString("key") + "/transitions"));
+				httpRequestCloseJiraIssue.setURI(URI.create("https://" + jiraBaseUrl + "/rest/api/3/issue/" + jiraIssue.getString("key") + "/transitions"));
 
 				CloseableHttpResponse response = httpClient.execute(httpRequestCloseJiraIssue);
 				HttpEntity responseEntity = response.getEntity();
